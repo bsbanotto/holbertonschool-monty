@@ -1,6 +1,15 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/* C Libraries */
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdarg.h>
+#include <ctype.h>
+
 /* Data Structures */
 
 /**
@@ -35,10 +44,42 @@ typedef struct instruction_s
 
 /* Extern Variable Declaration */
 
+extern stack_t *head;
 
+/* Typedef for opcode function */
 
-/* Function Prototypes */
+typedef void (*op_func)(stack_t **stack, unsigned int line_number);
 
+/* ---------- Function Prototypes ---------- */
 
+/* Handle Nodes */
+
+stack_t *createNode(int n);
+void freeNodes(void);
+void push(stack_t **newNode, unsigned int linenum);
+
+/* Execute Commands */
+
+void openOpcode(char *opcode);
+void readFile(FILE *fileDescriptor);
+int readLine(char *line, int linenum);
+void findFunc(char *opcode, char *num, int line);
+void runFunc(op_func f, char *opcode, char *num, int line);
+void pall(stack_t **stack, unsigned int linenum);
+void pint(stack_t **stack, unsigned int linenum);
+void pop(stack_t **stack, unsigned int linenum);
+void swap(stack_t **stack, unsigned int linenum);
+void add(stack_t **stack, unsigned int linenum);
+void nop(stack_t **stack, unsigned int linenum);
+void sub(stack_t **stack, unsigned int linenum);
+void divide(stack_t **stack, unsigned int linenum);
+void multiply(stack_t **stack, unsigned int linenum);
+void modulo(stack_t **stack, unsigned int linenum);
+
+/* Errors */
+
+void error(int errorCase, ...);
+void error2(int errorCase, ...);
+void error3(int errorCase, ...);
 
 #endif
