@@ -56,4 +56,5 @@ void freeNodes(void)
 		head = head->next;
 		free(temp);
 	}
+	free(head);
 }

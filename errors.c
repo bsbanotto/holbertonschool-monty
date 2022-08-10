@@ -91,9 +91,10 @@ void error2(int errorCase, ...)
 /**
  * error3 - Handles more additional error messages and exit
  * @errorCase: Different cases for errors
- * (1) - divide error - can't divide by zero (0)
+ * (1) - divide/modulo error - can't divide by zero (0)
  * (2) - divide error - stack too short
  * (3) - multiply error - stack too short
+ * (4) - modulo error - stack too short
  *
  * Return: Void
  */
