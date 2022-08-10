@@ -1,4 +1,5 @@
 #include "monty.h"
+
 stack_t *head = NULL;
 
 /**
@@ -15,7 +16,7 @@ int main(int ac, char *av[])
 		error(1);
 
 	openOpcode(av[1]);
-	freeNodes();
+	freeNodes(&head);
 	return (0);
 }
 
@@ -43,18 +44,17 @@ stack_t *createNode(int n)
  * freeNodes - Free nodes in stack
  */
 
-void freeNodes(void)
+void freeNodes(stack_t **stack)
 {
 	stack_t *temp;
 
-	if (head == NULL)
+	if (stack == NULL || *stack == NULL)
 		return;
 
-	while (head != NULL)
+	while (*stack != NULL)
 	{
-		temp = head;
-		head = head->next;
+		temp = *stack;
+		*stack = temp->next;
 		free(temp);
 	}
-	free(head);
 }

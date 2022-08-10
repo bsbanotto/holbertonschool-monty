@@ -55,7 +55,7 @@ typedef void (*op_func)(stack_t **stack, unsigned int line_number);
 /* Handle Nodes */
 
 stack_t *createNode(int n);
-void freeNodes(void);
+void freeNodes(stack_t **stack);
 void push(stack_t **newNode, unsigned int linenum);
 
 /* Execute Commands */

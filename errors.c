@@ -39,7 +39,7 @@ void error(int errorCase, ...)
 			printf("L%d: usage: push integer\n", va_arg(ag, int));
 			break;
 	}
-	freeNodes();
+	freeNodes(&head);
 	exit(EXIT_FAILURE);
 }
 
@@ -84,7 +84,7 @@ void error2(int errorCase, ...)
 			printf("L%d: can't sub, stack too short\n", linenum);
 			break;
 	}
-	freeNodes();
+	freeNodes(&head);
 	exit(EXIT_FAILURE);
 }
 
@@ -124,7 +124,7 @@ void error3(int errorCase, ...)
 			printf("L%d: can't mod, stack too short\n", linenum);
 			break;
 	}
-	freeNodes();
+	freeNodes(&head);
 	exit(EXIT_FAILURE);
 }
 
