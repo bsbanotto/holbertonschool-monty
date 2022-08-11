@@ -42,6 +42,7 @@ stack_t *createNode(int n)
 
 /**
  * freeNodes - Free nodes in stack
+ * @stack: double pointer to stack of nodes
  */
 
 void freeNodes(stack_t **stack)
