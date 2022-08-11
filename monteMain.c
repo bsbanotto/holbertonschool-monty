@@ -47,17 +47,12 @@ stack_t *createNode(int n)
 
 void freeNodes(stack_t **stack)
 {
-	stack_t *temp;
-
 	if (stack == NULL || *stack == NULL)
 	{
 		return;
 	}
 
-	while (*stack != NULL)
-	{
-		temp = *stack;
-		*stack = temp->next;
-		free(temp);
-	}
+	freeNodes(&((*stack)->next));
+	free(*stack);
+	*stack = NULL;
 }
