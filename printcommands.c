@@ -13,10 +13,10 @@ void pall(stack_t **stack, unsigned int linenum)
 	stack_t *temp;
 
 	(void) linenum;
-
-	if (stack == NULL)
-		exit(EXIT_FAILURE);
-
+/*
+*	if (stack == NULL)
+*		exit(EXIT_FAILURE);
+*/
 	temp = *stack;
 	while (temp != NULL)
 	{
