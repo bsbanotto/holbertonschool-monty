@@ -49,7 +49,7 @@ void readFile(FILE *fileDescriptor)
 	if (fileDescriptor == NULL)
 		error(3, "opcode");
 
-	for (linenum = 1; getline(&line, &i, fileDescriptor) != EOF; linenum++)
+	for (linenum = 1; getline(&line, &i, fileDescriptor) != -1; linenum++)
 	{
 		readLine(line, linenum);
 	}
