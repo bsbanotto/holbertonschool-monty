@@ -49,7 +49,9 @@ void freeNodes(stack_t **stack)
 	stack_t *temp;
 
 	if (stack == NULL || *stack == NULL)
+	{
 		return;
+	}
 
 	while (*stack != NULL)
 	{

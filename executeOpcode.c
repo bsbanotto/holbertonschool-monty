@@ -80,6 +80,7 @@ int readLine(char *line, int linenum)
 	value = strtok(NULL, " \t\a\n");
 
 	findFunc(opcode, value, linenum);
+
 	return (0);
 }
 
