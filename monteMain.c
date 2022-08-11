@@ -17,7 +17,7 @@ int main(int ac, char *av[])
 
 	openOpcode(av[1]);
 	freeNodes(&head);
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 /**
